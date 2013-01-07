@@ -45,5 +45,14 @@ CHANGELOG
 * Updated 'fullscreenchange' event to be called even if the user presses escape to exit fullscreen.
 * Automatically converting URsource URL to absolute for Flash fallback.
 * Created new 'loadedalldata' event for when  the source is completely downloaded
-* Improved player.destory(). Now removes elements and references.
+* Improved player.destroy(). Now removes elements and references.
 * Refactored API to be more immediately available.
+
+---- 3.2.1 / 2012-04-06 / options-width-fix ------------------------------------
+* Fixed setting width/height with javascript options
+
+---- 3.2.2 / 2012-05-02 / multiple-control-fades-fix ---------------------------
+* Fixed error with multiple controls fading listeners
+
+---- 3.2.3 / 2012-11-12 / fix-chrome-seeking-spinner ---------------------------
+* Fixed chrome spinner continuing on seek

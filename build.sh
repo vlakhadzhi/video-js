@@ -67,9 +67,8 @@ java -jar build/lib/yuicompressor-2.4.7.jar dist/video-js.css -o dist/video-js.m
 
 set dist_dir = dist
 set wiley_player_js_dir = wiley-player/js
-set wiley_player_js_list = "LGPLv3-LICENSE.txt README.md video-js.min.css video-js.png video-js.swf video.min.js video.js video-js.css"
+set wiley_player_js_list = "video-js.min.css video-js.png video-js.swf video.min.js video.js video-js.css"
 set videojs_dist_name = video-js.tar.bz2
-set wiley_player_dist_list = "build build.sh decisions.txt demo-subtitles.srt design dev dev.html.example docs flash LGPLv3-LICENSE.txt Rakefile README.md source-list.js src tech test VERSION.yml"
 
 if (! -d $wiley_player_js_dir) then
 	mkdir -p $wiley_player_js_dir
@@ -78,5 +77,3 @@ endif
 foreach file ($wiley_player_js_list)
 	cp $dist_dir/$file $wiley_player_js_dir
 end
-
-#tar cjf $wiley_player_js_dir/$videojs_dist_name $wiley_player_dist_list

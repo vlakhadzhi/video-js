@@ -3135,6 +3135,12 @@ _V_.LoadingSpinner = _V_.Component.extend({
     player.addEvent("playing", _V_.proxy(this, this.hide));
 
     player.addEvent("seeking", _V_.proxy(this, this.show));
+
+    // in some browsers seeking does not trigger the 'playing' event,
+    // so we also need to trap 'seeked' if we are going to set a
+    // 'seeking' event
+    player.addEvent("seeked", _V_.proxy(this, this.hide));
+
     player.addEvent("error", _V_.proxy(this, this.show));
 
     // Not showing spinner on stalled any more. Browsers may stall and then not trigger any events that would remove the spinner.
@@ -3740,6 +3746,7 @@ _V_.MenuItem = _V_.Button.extend({
   }
 
 });
+
 // TEXT TRACKS
 // Text tracks are tracks of timed text events.
 //    Captions - text displayed over the video for the hearing impared
