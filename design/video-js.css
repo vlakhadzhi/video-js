@@ -61,7 +61,7 @@ body.vjs-full-window {
   background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.50);
 }
 .video-js .vjs-subtitles { color: #fff; }
-.video-js .vjs-captions { color: #fc6; }
+.video-js .vjs-captions { color: #fff; }
 .vjs-tt-cue { display: block; }
 
 /* Fading sytles, used to fade control bar. */
