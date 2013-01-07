@@ -54,10 +54,12 @@ VideoJS.options = {
   html5: {},
   flash: { swf: "http://vjs.zencdn.net/c/video-js.swf" },
 
+  popup: {},
+
   // Default of web browser is 300x150. Should rely on source width/height.
-  width: "auto",
-  height: "auto",
-  
+  width: 300,
+  height: 150,
+
   // defaultVolume: 0.85,
   defaultVolume: 0.00, // The freakin seaguls are driving me crazy!
 

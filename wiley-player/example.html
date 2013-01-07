@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+	Copyright &copy; 2012, 2013 John Wiley &amp; Sons, Inc. All rights reserved.
+	Based on video-js v3.2 (GNU LGPL v3), <http://videojs.com>
+	Free source download: https://github.com/vlakhadzhi/video-js
+-->
+<html><head>
+
+<!-- Title of the page -->
+<title>Example</title>
+
+<style>
+  html, body {
+    background-color: black;
+    margin:0;
+    padding: 0;
+  }
+  #layout {
+    width:100%;
+    height:100%;
+    position:absolute;
+    text-align:center;
+    vertical-align:middle;
+  }
+  #video1 {
+    margin: 0 auto;
+  }
+</style>
+
+<meta charset="utf-8">
+<link href="js/video-js.css" rel="stylesheet" type="text/css">
+
+// Uncomment corresponding line(s) to disable native fullscreen mode support
+<script>
+  // document.mozCancelFullScreen = undefined; // Firefox
+  // document.webkitCancelFullScreen = undefined; // Chrome, Safary
+  // document.cancelFullscreen = undefined; // other
+</script>
+
+<script src="js/video.js"></script>
+<script>
+  _V_.options.flash.swf = "js/video-js.swf";
+  _V_.options.flash.iFrameMode = true;
+
+  // Uncomment the following line to hide popup button
+  // _V_.options.popup.hide = true;
+</script>
+
+</head>
+
+<body>
+<table id="layout"><tr><td>
+	<video id="video1" class="video-js vjs-default-skin" controls preload="none">
+
+		<source src="video/example.mp4" type='video/mp4'>
+		<source src="video/example.webm" type='video/webm'>
+		<source src="video/example.ogv" type='video/ogg'>
+
+    <!-- Display subtitles by default -->
+		<!--track kind="subtitles" src="video/example.vtt" srclang="en" label="English" default-->
+
+    <!-- Use "baloon" button for subtitles -->
+		<!--track kind="subtitles" src="video/example.vtt" srclang="en" label="English"-->
+
+    <!-- Use 'CC' button for subtitles -->
+		<track kind="captions" src="video/example.vtt" srclang="en" label="English">
+
+	</video>
+</td></tr></table>
+</body>
+
+</html>
+
+<script>
+_V_("video1").ready(function() {
+  var player = this;
+
+  // REQUIRED: width of the player in pixels
+  player.width(530);
+
+  // REQUIRED: height of the player in pixels
+  player.height(400);
+
+  // comment the line below if autostart not required
+  setTimeout(function() {player.play()}, 100);
+});
+</script>
