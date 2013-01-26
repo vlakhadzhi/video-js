@@ -21,8 +21,7 @@ along with Video.js.  If not, see <http://www.gnu.org/licenses/>.
 
 // Self-executing function to prevent global vars and help with minification
 ;(function(window, undefined){
-  var document = window.document;
-// HTML5 Shiv. Must be in <head> to support older browsers.
+  var document = window.document;// HTML5 Shiv. Must be in <head> to support older browsers.
 document.createElement("video");document.createElement("audio");
 
 var VideoJS = function(id, addOptions, ready){
@@ -140,7 +139,6 @@ VideoJS.options = {
 if (CDN_VERSION != "GENERATED_CDN_VSN") {
   _V_.options.flash.swf = "http://vjs.zencdn.net/"+CDN_VERSION+"/video-js.swf"
 }
-
 _V_.merge = function(obj1, obj2, safe){
   // Make sure second object exists
   if (!obj2) { obj2 = {}; };
@@ -494,8 +492,7 @@ if ("getBoundingClientRect" in document.documentElement) {
     }
     return curleft;
   };
-}
-// ECMA-262 is the standard for javascript.
+}// ECMA-262 is the standard for javascript.
 // The following methods are impelemented EXACTLY as described in the standard (according to Mozilla Docs), and do not override the default method if one exists.
 // This may conflict with other libraries that modify the array prototype, but those libs should update to use the standard.
 
@@ -712,7 +709,6 @@ if (!Array.prototype.indexOf) {
 //     return A;
 //   };      
 // }
-
 // Javascript JSON implementation
 // (Parse Method Only)
 // https://github.com/douglascrockford/JSON-js/blob/master/json2.js
@@ -767,7 +763,6 @@ if (!JSON) { JSON = {}; }
       };
   }
 }());
-
 // Event System (J.Resig - Secrets of a JS Ninja http://jsninja.com/ [Go read it, really])
 // (Book version isn't completely usable, so fixed some things and borrowed from jQuery where it's working)
 // 
@@ -1070,7 +1065,6 @@ _V_.Event.props = "altKey attrChange attrName bubbles button cancelable charCode
 function returnTrue(){ return true; }
 function returnFalse(){ return false; }
 
-
 // Using John Resig's Class implementation http://ejohn.org/blog/simple-javascript-inheritance/
 // (function(){var initializing=false, fnTest=/xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/; _V_.Class = function(){}; _V_.Class.extend = function(prop) { var _super = this.prototype; initializing = true; var prototype = new this(); initializing = false; for (var name in prop) { prototype[name] = typeof prop[name] == "function" && typeof _super[name] == "function" && fnTest.test(prop[name]) ? (function(name, fn){ return function() { var tmp = this._super; this._super = _super[name]; var ret = fn.apply(this, arguments); this._super = tmp; return ret; }; })(name, prop[name]) : prop[name]; } function Class() { if ( !initializing && this.init ) this.init.apply(this, arguments); } Class.prototype = prototype; Class.constructor = Class; Class.extend = arguments.callee; return Class;};})();
 (function(){
@@ -1300,8 +1294,7 @@ _V_.Component = _V_.Class.extend({
   // More easily attach 'this' to functions
   proxy: function(fn, uid){  return _V_.proxy(this, fn, uid); }
 
-});
-/* UI Component- Base class for all UI objects
+});/* UI Component- Base class for all UI objects
 ================================================================================ */
 _V_.Player = _V_.Component.extend({
 
@@ -2198,8 +2191,7 @@ _V_.Player = _V_.Component.extend({
     };
   }
 
-})();
-/* Playback Technology - Base class for playback technologies
+})();/* Playback Technology - Base class for playback technologies
 ================================================================================ */
 _V_.PlaybackTech = _V_.Component.extend({
   init: function(player, options){
@@ -2893,7 +2885,6 @@ _V_.flash.getEmbedCode = function(swf, flashVars, params, attributes){
 
   return objTag + attrsString + '>' + paramsString + '</object>';
 }
-
 /* Control - Base class for all control elements
 ================================================================================ */
 _V_.Control = _V_.Component.extend({
@@ -3746,7 +3737,6 @@ _V_.MenuItem = _V_.Button.extend({
   }
 
 });
-
 // TEXT TRACKS
 // Text tracks are tracks of timed text events.
 //    Captions - text displayed over the video for the hearing impared
@@ -4526,8 +4516,7 @@ _V_.merge(_V_.ControlBar.prototype.options.components, {
 //   init: function(player, options){
 //     this._super(player, options);
 //   }
-// });
-//
+// });//
 _V_.PopupButton = _V_.Button.extend({
 init: function(player, options) {
 	this._super(player, options);
@@ -4588,7 +4577,6 @@ _V_.merge(_V_.ControlBar.prototype.options.components, {
 	"popupButton": {}
 });
 //
-
 // Automatically set up any tags that have a data-setup attribute
 _V_.autoSetup = function(){
   var options, vid, player,
@@ -4645,7 +4633,6 @@ _V_.addEvent(window, "load", function(){
 
 // Run Auto-load players
 _V_.autoSetup();
-
 // Expose to global
 window.VideoJS = window._V_ = VideoJS;
 
